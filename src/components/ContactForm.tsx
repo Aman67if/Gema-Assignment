@@ -15,7 +15,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:3000/api/enquiry', {
+    const res = await fetch('https://gema-assignment-alpha.vercel.app/api/enquiry', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ const ContactForm = () => {
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
     setFormData({ name: "", email: "", phone: "" });
-    
+
     const data = await res.text();
     setApiMessage(data);
   };
