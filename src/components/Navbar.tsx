@@ -11,7 +11,7 @@ const Navbar = () => {
     "Get In Touch",
   ];
 
-  const navLinkLocation = {
+  const navLinkLocation: Record<string, string> = {
     "Fun Activities": "",
     "Blog": "",
     "Kidrove Go": "",
