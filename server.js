@@ -19,5 +19,11 @@ app.post("/api/enquiry", (req, res) => {
     res.status(200).send(`Thank you! ${name} We'll contact you soon.`);
 });
 
-ViteExpress.config({ mode: "production" })
-ViteExpress.listen(app, 3000, () => console.log("Server is listening..."));
+module.exports = app;
+
+
+if (process.env.NODE_ENV !== 'production') {
+  ViteExpress.listen(app, 3000, () => {
+    console.log('Server is listening on port 3000...');
+  });
+}
